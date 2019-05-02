@@ -1,0 +1,10 @@
+C:\Users\in4a13\Desktop\Solido\Solido\obj\Debug\Solido.csprojResolveAssemblyReference.cache
+C:\Users\in4a13\Desktop\Solido\Solido\obj\Debug\Solido.Form1.resources
+C:\Users\in4a13\Desktop\Solido\Solido\obj\Debug\Solido.Properties.Resources.resources
+C:\Users\in4a13\Desktop\Solido\Solido\obj\Debug\Solido.csproj.GenerateResource.Cache
+C:\Users\in4a13\Desktop\Solido\Solido\obj\Debug\Solido.csproj.CoreCompileInputs.cache
+C:\Users\in4a13\Desktop\Solido\Solido\bin\Debug\Solido.exe.config
+C:\Users\in4a13\Desktop\Solido\Solido\bin\Debug\Solido.exe
+C:\Users\in4a13\Desktop\Solido\Solido\bin\Debug\Solido.pdb
+C:\Users\in4a13\Desktop\Solido\Solido\obj\Debug\Solido.exe
+C:\Users\in4a13\Desktop\Solido\Solido\obj\Debug\Solido.pdb
