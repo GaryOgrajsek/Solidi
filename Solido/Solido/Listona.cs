@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Solido {
@@ -7,12 +7,10 @@ namespace Solido {
 
         public string trovaMaggioreDi(double magg) {
             string risultato = "";
-            int codice = 1;
             foreach(Solido s in this) {
                 if (s.getPeso() > magg) {
-                    risultato += (codice + "\n");
+                    risultato += (s.ToString() + "\n");
                 }
-                codice++;
             }
             return risultato;
         }
@@ -20,13 +18,11 @@ namespace Solido {
         public string trovaPerTipo(string tipo) {
             tipo = "Solido." + tipo;
             string risultato = "";
-            int codice = 1;
 
             foreach(Solido s in this) {
                 if(Convert.ToString(s.GetType()) == tipo) {
-                    risultato += (codice + "\n");
+                    risultato += (s.ToString() + "\n");
                 }
-                codice++;
             }
             return risultato;
         }
