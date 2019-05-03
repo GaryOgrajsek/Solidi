@@ -1,4 +1,4 @@
-﻿namespace Solido {
+namespace Solido {
     partial class Form1 {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -28,23 +28,23 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbx_solido = new System.Windows.Forms.ComboBox();
             this.gpx_cilindro = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txb_altezza = new System.Windows.Forms.TextBox();
             this.txb_raggio = new System.Windows.Forms.TextBox();
+            this.txb_altezza = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.gpx_cubo = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txb_lato = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.gpx_parall = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txb_lato1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txb_lato2 = new System.Windows.Forms.TextBox();
-            this.txb_lato3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txb_lato3 = new System.Windows.Forms.TextBox();
+            this.txb_lato2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txb_lato1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.gpx_sfera = new System.Windows.Forms.GroupBox();
-            this.txb_raggioSfe = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.txb_raggioSfe = new System.Windows.Forms.TextBox();
             this.btn_inserisci = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Codice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +61,8 @@
             this.btn_cerca = new System.Windows.Forms.Button();
             this.btn_cercaTipo = new System.Windows.Forms.Button();
             this.btn_chiudi = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txb_codice = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.gpx_cilindro.SuspendLayout();
             this.gpx_cubo.SuspendLayout();
@@ -72,7 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 34);
+            this.label1.Location = new System.Drawing.Point(10, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
@@ -80,7 +82,7 @@
             // 
             // txb_pesoSpec
             // 
-            this.txb_pesoSpec.Location = new System.Drawing.Point(63, 30);
+            this.txb_pesoSpec.Location = new System.Drawing.Point(63, 10);
             this.txb_pesoSpec.Name = "txb_pesoSpec";
             this.txb_pesoSpec.Size = new System.Drawing.Size(100, 20);
             this.txb_pesoSpec.TabIndex = 1;
@@ -122,14 +124,19 @@
             this.gpx_cilindro.TabStop = false;
             this.gpx_cilindro.Text = "Cilindro";
             // 
-            // label3
+            // txb_raggio
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Altezza";
+            this.txb_raggio.Location = new System.Drawing.Point(54, 48);
+            this.txb_raggio.Name = "txb_raggio";
+            this.txb_raggio.Size = new System.Drawing.Size(100, 20);
+            this.txb_raggio.TabIndex = 3;
+            // 
+            // txb_altezza
+            // 
+            this.txb_altezza.Location = new System.Drawing.Point(54, 17);
+            this.txb_altezza.Name = "txb_altezza";
+            this.txb_altezza.Size = new System.Drawing.Size(100, 20);
+            this.txb_altezza.TabIndex = 2;
             // 
             // label4
             // 
@@ -140,19 +147,14 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Raggio";
             // 
-            // txb_altezza
+            // label3
             // 
-            this.txb_altezza.Location = new System.Drawing.Point(54, 17);
-            this.txb_altezza.Name = "txb_altezza";
-            this.txb_altezza.Size = new System.Drawing.Size(100, 20);
-            this.txb_altezza.TabIndex = 2;
-            // 
-            // txb_raggio
-            // 
-            this.txb_raggio.Location = new System.Drawing.Point(54, 48);
-            this.txb_raggio.Name = "txb_raggio";
-            this.txb_raggio.Size = new System.Drawing.Size(100, 20);
-            this.txb_raggio.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Altezza";
             // 
             // gpx_cubo
             // 
@@ -165,6 +167,13 @@
             this.gpx_cubo.TabStop = false;
             this.gpx_cubo.Text = "Cubo";
             // 
+            // txb_lato
+            // 
+            this.txb_lato.Location = new System.Drawing.Point(41, 17);
+            this.txb_lato.Name = "txb_lato";
+            this.txb_lato.Size = new System.Drawing.Size(100, 20);
+            this.txb_lato.TabIndex = 1;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -173,13 +182,6 @@
             this.label5.Size = new System.Drawing.Size(28, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Lato";
-            // 
-            // txb_lato
-            // 
-            this.txb_lato.Location = new System.Drawing.Point(41, 17);
-            this.txb_lato.Name = "txb_lato";
-            this.txb_lato.Size = new System.Drawing.Size(100, 20);
-            this.txb_lato.TabIndex = 1;
             // 
             // gpx_parall
             // 
@@ -196,21 +198,28 @@
             this.gpx_parall.TabStop = false;
             this.gpx_parall.Text = "Parallelepipedo";
             // 
-            // label6
+            // label8
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Lato1";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 79);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Lato3";
             // 
-            // txb_lato1
+            // txb_lato3
             // 
-            this.txb_lato1.Location = new System.Drawing.Point(41, 20);
-            this.txb_lato1.Name = "txb_lato1";
-            this.txb_lato1.Size = new System.Drawing.Size(100, 20);
-            this.txb_lato1.TabIndex = 1;
+            this.txb_lato3.Location = new System.Drawing.Point(41, 76);
+            this.txb_lato3.Name = "txb_lato3";
+            this.txb_lato3.Size = new System.Drawing.Size(100, 20);
+            this.txb_lato3.TabIndex = 4;
+            // 
+            // txb_lato2
+            // 
+            this.txb_lato2.Location = new System.Drawing.Point(41, 50);
+            this.txb_lato2.Name = "txb_lato2";
+            this.txb_lato2.Size = new System.Drawing.Size(100, 20);
+            this.txb_lato2.TabIndex = 3;
             // 
             // label7
             // 
@@ -221,28 +230,21 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Lato2";
             // 
-            // txb_lato2
+            // txb_lato1
             // 
-            this.txb_lato2.Location = new System.Drawing.Point(41, 50);
-            this.txb_lato2.Name = "txb_lato2";
-            this.txb_lato2.Size = new System.Drawing.Size(100, 20);
-            this.txb_lato2.TabIndex = 3;
+            this.txb_lato1.Location = new System.Drawing.Point(41, 20);
+            this.txb_lato1.Name = "txb_lato1";
+            this.txb_lato1.Size = new System.Drawing.Size(100, 20);
+            this.txb_lato1.TabIndex = 1;
             // 
-            // txb_lato3
+            // label6
             // 
-            this.txb_lato3.Location = new System.Drawing.Point(41, 76);
-            this.txb_lato3.Name = "txb_lato3";
-            this.txb_lato3.Size = new System.Drawing.Size(100, 20);
-            this.txb_lato3.TabIndex = 4;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 79);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 13);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Lato3";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Lato1";
             // 
             // gpx_sfera
             // 
@@ -255,13 +257,6 @@
             this.gpx_sfera.TabStop = false;
             this.gpx_sfera.Text = "SferaEbbasta";
             // 
-            // txb_raggioSfe
-            // 
-            this.txb_raggioSfe.Location = new System.Drawing.Point(54, 19);
-            this.txb_raggioSfe.Name = "txb_raggioSfe";
-            this.txb_raggioSfe.Size = new System.Drawing.Size(100, 20);
-            this.txb_raggioSfe.TabIndex = 0;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -270,6 +265,13 @@
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 1;
             this.label9.Text = "Raggio";
+            // 
+            // txb_raggioSfe
+            // 
+            this.txb_raggioSfe.Location = new System.Drawing.Point(54, 19);
+            this.txb_raggioSfe.Name = "txb_raggioSfe";
+            this.txb_raggioSfe.Size = new System.Drawing.Size(100, 20);
+            this.txb_raggioSfe.TabIndex = 0;
             // 
             // btn_inserisci
             // 
@@ -400,11 +402,29 @@
             this.btn_chiudi.UseVisualStyleBackColor = true;
             this.btn_chiudi.Click += new System.EventHandler(this.btn_chiudi_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 45);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 13);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Codice";
+            // 
+            // txb_codice
+            // 
+            this.txb_codice.Location = new System.Drawing.Point(63, 42);
+            this.txb_codice.Name = "txb_codice";
+            this.txb_codice.Size = new System.Drawing.Size(100, 20);
+            this.txb_codice.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 553);
+            this.Controls.Add(this.txb_codice);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btn_chiudi);
             this.Controls.Add(this.btn_cercaTipo);
             this.Controls.Add(this.btn_cerca);
@@ -476,6 +496,7 @@
         private System.Windows.Forms.Button btn_cerca;
         private System.Windows.Forms.Button btn_cercaTipo;
         private System.Windows.Forms.Button btn_chiudi;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txb_codice;
     }
 }
-
