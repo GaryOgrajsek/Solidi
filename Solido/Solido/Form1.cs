@@ -1,15 +1,13 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 
 namespace Solido {
     public partial class Form1 : Form {
         Listona lista;
-        int codice;
 
         public Form1() {
             InitializeComponent();
             lista = new Listona();
-            this.codice = 1;
             this.dataGridView1.Rows.Clear();
         }
 
@@ -37,31 +35,23 @@ namespace Solido {
 
         private void btn_inserisci_Click(object sender, EventArgs e) {
             switch (cbx_solido.SelectedIndex) {
-                case 0:
-                    Cilindro cil = new Cilindro(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggio.Text), Convert.ToDouble(txb_altezza.Text), codice);
-                    lista.Add(cil);
-                    txb_pesoSpec.Text = txb_altezza.Text = txb_raggio.Text = "";
+                case 0://da sistemà
+                    lista.Add(new Cilindro(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggio.Text), Convert.ToDouble(txb_altezza.Text), txb_codice.Text));
                     break;
                 case 1:
-                    Cubo cub = new Cubo(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato.Text), codice);
-                    lista.Add(cub);
-                    txb_pesoSpec.Text = txb_lato.Text = "";
+                    lista.Add(new Cubo(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato.Text), txb_codice.Text));
                     break;
                 case 2:
-                    Parallelepipedo par = new Parallelepipedo (Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato1.Text), Convert.ToDouble(txb_lato2.Text), Convert.ToDouble(txb_lato3.Text), codice);
-                    lista.Add(par);
-                    txb_pesoSpec.Text = txb_lato1.Text = txb_lato2.Text = txb_lato3.Text = "";
+                    lista.Add(new Parallelepipedo(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato1.Text), Convert.ToDouble(txb_lato2.Text), Convert.ToDouble(txb_lato3.Text), txb_codice.Text));
                     break;
                 case 3:
-                    Sfera sfe = new Sfera(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggioSfe.Text), codice);
-                    lista.Add(sfe);
-                    txb_pesoSpec.Text = txb_raggio.Text = "";
+                    lista.Add(new Sfera(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggioSfe.Text), txb_codice.Text));
                     break;
                 default:
                     MessageBox.Show("METTERE UN TIPO DI SOLIDO!!!");
                     return;
             }
-            codice++;
+            ClearTextBoxes();
             visualizza();
         }
 
@@ -94,6 +84,22 @@ namespace Solido {
                     break;
             }
             MessageBox.Show(lista.trovaPerTipo(tipo));
+        }
+
+        private void ClearTextBoxes() {
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                    if (control is TextBox) {
+                        (control as TextBox).Clear();
+                    } else {
+                        func(control.Controls);
+                    }
+            };
+
+            func(Controls);
         }
 
         private void btn_chiudi_Click(object sender, EventArgs e) => Close();
