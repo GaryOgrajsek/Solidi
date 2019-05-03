@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Solido {
     class Parallelepipedo : Solido{
@@ -10,11 +10,10 @@ namespace Solido {
         public double Lato2 { get => lato2; set => lato2 = value; }
         public double Lato3 { get => lato3; set => lato3 = value; }
 
-        public Parallelepipedo(double pc, double l1, double l2, double l3, int cod) {
+        public Parallelepipedo(double pc, double l1, double l2, double l3, string cod) : base(cod) {
             this.Lato1 = l1;
             this.Lato2 = l2;
             this.Lato3 = l3;
-            this.Codice = cod;
             calcolaV();
             calcolaP(pc);
         }
