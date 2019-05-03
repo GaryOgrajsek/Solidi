@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Solido {
     class Cilindro : Solido{
@@ -8,10 +8,9 @@ namespace Solido {
         public double Raggio { get => raggio; set => raggio = value; }
         public double Altezza { get => altezza; set => altezza = value; }
 
-        public Cilindro(double pc, double r, double a, int cod) {
+        public Cilindro(double pc, double r, double a, string cod) : base(cod) {
             this.Raggio = r;
             this.Altezza = a;
-            this.Codice = cod;
             calcolaV();
             calcolaP(pc);
         }
