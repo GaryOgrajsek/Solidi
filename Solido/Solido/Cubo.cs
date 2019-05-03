@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Solido {
     class Cubo : Solido{
@@ -6,8 +6,7 @@ namespace Solido {
 
         public double Lato { get => lato; set => lato = value; }
 
-        public Cubo(double pc, double l, int cod) {
-            this.Codice = cod;
+        public Cubo(double pc, double l, string cod) : base(cod) {
             this.Lato = l;
             calcolaV();
             calcolaP(pc);     
