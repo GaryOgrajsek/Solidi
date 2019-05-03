@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Solido {
     class Sfera : Solido{
@@ -6,8 +6,7 @@ namespace Solido {
 
         public double Raggio { get => raggio; set => raggio = value; }
 
-        public Sfera(double pc, double r, int cod) {
-            this.Codice = cod;
+        public Sfera(double pc, double r, string cod) : base(cod){
             this.Raggio = r;
             calcolaV();
             calcolaP(pc);  
