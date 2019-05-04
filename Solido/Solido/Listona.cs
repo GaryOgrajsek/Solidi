@@ -5,6 +5,15 @@ namespace Solido {
     class Listona : List<Solido> {
         public Listona() { }
 
+        public bool CercaCodice(string cod) {
+            foreach(Solido s in this) {
+                if (s.getCodice() == cod) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public string trovaMaggioreDi(double magg) {
             string risultato = "";
             foreach(Solido s in this) {
@@ -16,7 +25,6 @@ namespace Solido {
         }
 
         public string trovaPerTipo(string tipo) {
-            tipo = "Solido." + tipo;
             string risultato = "";
 
             foreach(Solido s in this) {
