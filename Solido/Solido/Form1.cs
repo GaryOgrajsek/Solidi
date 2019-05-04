@@ -87,6 +87,7 @@ namespace Solido {
                     tipo = "Sfera";
                     break;
             }
+            tipo = tipo = "Solido." + tipo;
             MessageBox.Show(lista.trovaPerTipo(tipo));
         }
 
