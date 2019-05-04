@@ -22,5 +22,7 @@ namespace Solido {
         public override string ToString() => Convert.ToString(this.Codice) + "|" + Convert.ToString(this.GetType().Name) + "|" + this.Volume + "|" + this.Peso + "|" + this.Raggio + "|" + this.Altezza + "|" + "|" + "|";
 
         public override double getPeso() => Peso;
+
+        public override string getCodice() => Codice;
     }
 }
