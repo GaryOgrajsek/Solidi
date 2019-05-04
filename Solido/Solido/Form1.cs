@@ -34,25 +34,29 @@ namespace Solido {
         }
 
         private void btn_inserisci_Click(object sender, EventArgs e) {
-            switch (cbx_solido.SelectedIndex) {
-                case 0://da sistemà
-                    lista.Add(new Cilindro(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggio.Text), Convert.ToDouble(txb_altezza.Text), txb_codice.Text));
-                    break;
-                case 1:
-                    lista.Add(new Cubo(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato.Text), txb_codice.Text));
-                    break;
-                case 2:
-                    lista.Add(new Parallelepipedo(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato1.Text), Convert.ToDouble(txb_lato2.Text), Convert.ToDouble(txb_lato3.Text), txb_codice.Text));
-                    break;
-                case 3:
-                    lista.Add(new Sfera(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggioSfe.Text), txb_codice.Text));
-                    break;
-                default:
-                    MessageBox.Show("METTERE UN TIPO DI SOLIDO!!!");
-                    return;
+            if (lista.CercaCodice(txb_codice.Text)) {
+                switch (cbx_solido.SelectedIndex) {
+                    case 0://da sistemà
+                        lista.Add(new Cilindro(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggio.Text), Convert.ToDouble(txb_altezza.Text), txb_codice.Text));
+                        break;
+                    case 1:
+                        lista.Add(new Cubo(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato.Text), txb_codice.Text));
+                        break;
+                    case 2:
+                        lista.Add(new Parallelepipedo(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato1.Text), Convert.ToDouble(txb_lato2.Text), Convert.ToDouble(txb_lato3.Text), txb_codice.Text));
+                        break;
+                    case 3:
+                        lista.Add(new Sfera(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggioSfe.Text), txb_codice.Text));
+                        break;
+                    default:
+                        MessageBox.Show("Mettere un tipo di solido");
+                        return;
+                }
+                ClearTextBoxes();
+                visualizza();
+            } else {
+                MessageBox.Show("Codice già presente");
             }
-            ClearTextBoxes();
-            visualizza();
         }
 
         private void visualizza() {
@@ -98,7 +102,6 @@ namespace Solido {
                         func(control.Controls);
                     }
             };
-
             func(Controls);
         }
 
