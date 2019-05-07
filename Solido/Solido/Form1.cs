@@ -9,6 +9,7 @@ namespace Solido {
             InitializeComponent();
             lista = new Listona();
             this.dataGridView1.Rows.Clear();
+            this.cbx_solido.SelectedIndex = 0;
         }
 
         private void cbx_solido_SelectedIndexChanged(object sender, EventArgs e) {
@@ -30,30 +31,31 @@ namespace Solido {
                     gpx_cilindro.Enabled = gpx_parall.Enabled = gpx_cubo.Enabled = false;
                     break;
             }
-
         }
 
         private void btn_inserisci_Click(object sender, EventArgs e) {
-            if (lista.CercaCodice(txb_codice.Text)) {
-                switch (cbx_solido.SelectedIndex) {
-                    case 0://da sistemà
-                        lista.Add(new Cilindro(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggio.Text), Convert.ToDouble(txb_altezza.Text), txb_codice.Text));
-                        break;
-                    case 1:
-                        lista.Add(new Cubo(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato.Text), txb_codice.Text));
-                        break;
-                    case 2:
-                        lista.Add(new Parallelepipedo(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato1.Text), Convert.ToDouble(txb_lato2.Text), Convert.ToDouble(txb_lato3.Text), txb_codice.Text));
-                        break;
-                    case 3:
-                        lista.Add(new Sfera(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggioSfe.Text), txb_codice.Text));
-                        break;
-                    default:
-                        MessageBox.Show("Mettere un tipo di solido");
-                        return;
+            if (!lista.CercaCodice(txb_codice.Text)) {
+                try {
+                    switch (cbx_solido.SelectedIndex) {
+                        case 0:
+                            lista.Add(new Cilindro(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggio.Text), Convert.ToDouble(txb_altezza.Text), txb_codice.Text));
+                            break;
+                        case 1:
+                            lista.Add(new Cubo(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato.Text), txb_codice.Text));
+                            break;
+                        case 2:
+                            lista.Add(new Parallelepipedo(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_lato1.Text), Convert.ToDouble(txb_lato2.Text), Convert.ToDouble(txb_lato3.Text), txb_codice.Text));
+                            break;
+                        case 3:
+                            lista.Add(new Sfera(Convert.ToDouble(txb_pesoSpec.Text), Convert.ToDouble(txb_raggioSfe.Text), txb_codice.Text));
+                            break;
+                    }
+                    ClearTextBoxes();
+                    visualizza();
                 }
-                ClearTextBoxes();
-                visualizza();
+                catch(Exception) {
+                    MessageBox.Show("Completare tutti i campi!");
+                }
             } else {
                 MessageBox.Show("Codice già presente");
             }
@@ -69,7 +71,14 @@ namespace Solido {
             dataGridView1.Rows.Add(riga);
         }
 
-        private void btn_cerca_Click(object sender, EventArgs e) => MessageBox.Show(lista.trovaMaggioreDi(Convert.ToDouble(txb_maggiore.Text)));
+        private void btn_cerca_Click(object sender, EventArgs e) {
+            try {
+                MessageBox.Show(lista.trovaMaggioreDi(Convert.ToDouble(txb_maggiore.Text)));
+                txb_maggiore.Text = "";
+            } catch (Exception) {
+                MessageBox.Show("Inserire un valore corretto!");
+            }
+        }
 
         private void btn_cercaTipo_Click(object sender, EventArgs e) {
             string tipo = "";
@@ -104,7 +113,7 @@ namespace Solido {
                     }
             };
             func(Controls);
-        }
+        } //l'ho copiata da Internet
 
         private void btn_chiudi_Click(object sender, EventArgs e) => Close();
     }
