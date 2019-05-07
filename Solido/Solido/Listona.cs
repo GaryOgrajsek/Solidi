@@ -1,37 +1,30 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Solido {
     class Listona : List<Solido> {
         public Listona() { }
 
         public bool CercaCodice(string cod) {
-            foreach(Solido s in this) {
-                if (s.getCodice() == cod) {
-                    return false;
-                }
-            }
-            return true;
+            return this.Any(s => s.getCodice() == cod);
         }
 
         public string trovaMaggioreDi(double magg) {
-            string risultato = "";
-            foreach(Solido s in this) {
-                if (s.getPeso() > magg) {
-                    risultato += (s.ToString() + "\n");
-                }
-            }
-            return risultato;
+            return "NonFinito";
+            /*IEnumerable<Solido> r = this.All(s => s.getPeso() > magg);
+<//var l = FindAll();
+            return Convert.ToString(r);*/
         }
 
         public string trovaPerTipo(string tipo) {
             string risultato = "";
-
-            foreach(Solido s in this) {
+            risultato = Convert.ToString(this.FindAll(s => Convert.ToString(s.GetType()).Equals(tipo)));
+            /*foreach (Solido s in this) {
                 if(Convert.ToString(s.GetType()) == tipo) {
                     risultato += (s.ToString() + "\n");
                 }
-            }
+            }*/
             return risultato;
         }
     }
