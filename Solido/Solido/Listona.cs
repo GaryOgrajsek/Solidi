@@ -6,25 +6,23 @@ namespace Solido {
     class Listona : List<Solido> {
         public Listona() { }
 
-        public bool CercaCodice(string cod) {
-            return this.Any(s => s.getCodice() == cod);
-        }
+        public bool CercaCodice(string cod) => this.Any(s => s.getCodice() == cod);
 
         public string trovaMaggioreDi(double magg) {
-            return "NonFinito";
-            /*IEnumerable<Solido> r = this.All(s => s.getPeso() > magg);
-<//var l = FindAll();
-            return Convert.ToString(r);*/
+            string risultato = "";
+            List<Solido> r = this.FindAll(s => s.getPeso() > magg);
+            foreach(Solido y in r) {
+                risultato += y.ToString() + "\n";
+            }
+            return risultato;
         }
 
         public string trovaPerTipo(string tipo) {
             string risultato = "";
-            risultato = Convert.ToString(this.FindAll(s => Convert.ToString(s.GetType()).Equals(tipo)));
-            /*foreach (Solido s in this) {
-                if(Convert.ToString(s.GetType()) == tipo) {
-                    risultato += (s.ToString() + "\n");
-                }
-            }*/
+            List<Solido> ls = this.FindAll(s => (Convert.ToString(s.GetType()) == tipo));
+            foreach (Solido s in ls) {
+                risultato += s.ToString()+"\n";
+            }
             return risultato;
         }
     }
