@@ -8,8 +8,20 @@ namespace Solido {
         public Form1() {
             InitializeComponent();
             lista = new Listona();
+            btn_inserisci.Enabled = false;
             this.dataGridView1.Rows.Clear();
             this.cbx_solido.SelectedIndex = 0;
+            txb_codice.TextChanged += new EventHandler(Controllo);
+            txb_pesoSpec.TextChanged += new EventHandler(Controllo);
+            cbx_solido.TextChanged += new EventHandler(Controllo); 
+        }
+
+        private void Controllo(object sender, EventArgs e) {
+            if(txb_codice.Text != "" && txb_pesoSpec.Text != "" && cbx_solido.Text != "") {
+                btn_inserisci.Enabled = true;
+            } else {
+                btn_inserisci.Enabled = false;
+            }
         }
 
         private void cbx_solido_SelectedIndexChanged(object sender, EventArgs e) {
